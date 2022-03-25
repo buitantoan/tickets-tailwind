@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tickets-tailwind/static/css/main.d246d775.css",
+    "main.js": "/tickets-tailwind/static/js/main.a8962314.js",
+    "static/js/787.13b48f38.chunk.js": "/tickets-tailwind/static/js/787.13b48f38.chunk.js",
+    "index.html": "/tickets-tailwind/index.html",
+    "main.d246d775.css.map": "/tickets-tailwind/static/css/main.d246d775.css.map",
+    "main.a8962314.js.map": "/tickets-tailwind/static/js/main.a8962314.js.map",
+    "787.13b48f38.chunk.js.map": "/tickets-tailwind/static/js/787.13b48f38.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d246d775.css",
+    "static/js/main.a8962314.js"
+  ]
+}
