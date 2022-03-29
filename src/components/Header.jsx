@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-      <div className='header'>
-        <nav>
+      <div className='header py-6'>
+        <nav className='container mx-auto'>
           <ul>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/tickets/">Tickets</Link>
+              <Link 
+                to="/" 
+                className='text-2xl font-medium text-white hover:text-active'>Home</Link>
             </li>
           </ul>
         </nav>

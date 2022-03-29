@@ -1,25 +1,43 @@
-import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom'
 import Button from './Button';
+import UpdateTicket from './UpdateTicket';
 
-const TicketItem = ({ticket, updateStatus, deleteTicket }) => {
+const TicketItem = ({ticket, updateTicket, deleteTicket }) => {
+
+    const [showUpdateTicketForm, setShowUpdateTicketForm] = useState(false);
+
+    const date = ticket.created;
+
     return (
-        <div className='ticket___item'>
+        <div className='ticket___item p-5 text-left bg-white rounded-md ring-1 ring-slate-200 shadow-sm'>
             <div className='ticket___item-header'>
-                <div className='ticket___item-id'>Id: {ticket.id}</div>
+                <div className='ticket___item-id text-2xl font-medium'>Id: {ticket.id}</div>
                 <div className='ticket___item-status'>Status: {ticket.status}</div>
             </div>
             <div className='ticket__item-content'>
-                <div className='ticket__item-title'>{ticket.title}</div>
-                <div className='ticket__item-description'>{ticket.description}</div>
+                <div className='ticket__item-title hover:text-blue'>
+                    <Link to={`/tickets/${ticket.id}`}>
+                        Title: {ticket.title}
+                    </Link>
+                </div>
+                <div className='ticket__item-description'>Description: {ticket.des}</div>
+                <div className='ticket__item-date'>Date: {date}</div>
             </div>
-            <div className='ticket__item-bottom'>
-                <div className='ticket__item-action flex-auto flex space-x-4'>
-                    <Button btnClass='text-xl h-10 px-6 px-3 font-semibold rounded-md bg-black text-white' text='Open' onClick={() => updateStatus(ticket.id, 'open')} ></Button>
-                    <Button btnClass='text-xl h-10 px-6 px-3 font-semibold rounded-md bg-black text-white' text='In Progress' onClick={() => updateStatus(ticket.id, 'in-progress')} ></Button>
-                    <Button btnClass='text-xl h-10 px-6 px-3 font-semibold rounded-md bg-black text-white' text='completed' onClick={() => updateStatus(ticket.id, 'completed')} ></Button>
-                    <Button btnClass='btn text-xl' text='Delete' onClick={() => deleteTicket(ticket.id)} ></Button>
+            <div className='ticket__item-bottom pt-5'>
+                <div className='ticket__item-action flex space-x-4 '>
+                    <Button btnClass='text-xl px-5 py-2 font-medium rounded-md bg-black text-white hover:text-active' text='Update' onClick={() => setShowUpdateTicketForm(!showUpdateTicketForm)} ></Button>
+                    <Button btnClass='text-xl px-5 py-2 font-medium rounded-md bg-black text-white hover:text-active' text='Delete' onClick={() => deleteTicket(ticket.id)} ></Button>
                 </div>
             </div>
+            {showUpdateTicketForm && (
+                <UpdateTicket 
+                    checkShowForm={showUpdateTicketForm}
+                    onShowForm={setShowUpdateTicketForm}
+                    ticket={ticket}
+                    updateTicket={updateTicket}
+                />
+            )}
         </div>
     );
 }

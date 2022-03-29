@@ -1,15 +1,16 @@
 import TicketItem from '../components/TicketItem';
 
-const TicketList = ({tickets, updateStatus, deleteTicket}) => {
+const TicketList = ({tickets, updateTicket, deleteTicket}) => {
   return (
-    <div className='ticket__list'>
+    <div className='ticket__list grid grid-cols-3 md:grid grid-cols-2 gap-5'>
         { tickets &&
           tickets.map((ticket, i) => (
               <TicketItem 
                 key={i} 
                 ticket={ticket} 
-                updateStatus={updateStatus} 
-                deleteTicket={deleteTicket}>  
+                updateTicket={updateTicket} 
+                deleteTicket={deleteTicket}
+              >  
               </TicketItem>
           ))
         }

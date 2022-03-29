@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import Form from './Form';
+import Form from './Form'
 
+const UpdateTicket = ({checkShowForm, onShowForm, ticket, updateTicket}) => {
 
-const AddTicket = ({ showForm ,addTicket}) => {
+    const [title, setTitle] = useState(ticket.title);
+    const [des, setDes] = useState(ticket.des);
+    const [status, setStatus] = useState(ticket.status);
 
-    const date = new Date();
-
-    const [title, setTitle] = useState('');
-    const [des, setDes] = useState('');
-    const [created, setCreated] = useState(date.toDateString());
-    const [status, setStatus] = useState('open');
-
+    const showForm = () => {
+        onShowForm(!checkShowForm);
+    }
 
     const onTitle = (e) =>{
         setTitle(e.target.value);
@@ -31,12 +30,8 @@ const AddTicket = ({ showForm ,addTicket}) => {
             return;
         }
 
-        addTicket( {title, des, status, created} )
-
-        setTitle('');
-        setDes('');
-        setStatus('');
-
+        updateTicket( {id: ticket.id, title, des, status} );
+        showForm();
     }
 
     return (
@@ -52,17 +47,15 @@ const AddTicket = ({ showForm ,addTicket}) => {
                     title={title}
                     des={des}
                     status={status}
-                    textSubmit='Save Ticket'
+                    textSubmit='Update Ticket'
                 />
             </div>
         </div>
     );
+}
+
+UpdateTicket.propTypes = {
+    updateTicket : PropTypes.func,
 };
 
-
-AddTicket.propTypes = {
-    addTicket : PropTypes.func,
-};
-
-
-export default AddTicket;
+export default UpdateTicket;
