@@ -35,7 +35,7 @@ const UpdateTicket = ({checkShowForm, onShowForm, ticket, updateTicket}) => {
     }
 
     return (
-        <div className="modal fade fixed top-0 left-0 bg-gray-600 bg-opacity-50 w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+        <div className="modal fade fixed top-0 left-0 bg-gray-600 bg-opacity-50 w-full h-full overflow-x-hidden overflow-y-auto"
             id="formModal">
             <div className="modal-dialog relative max-w-xl mx-auto">
                 <button onClick={showForm} className='absolute top-0 right-0 px-4 py-2 bg-black text-white'>Close</button>

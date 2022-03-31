@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Fragment , useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom'
 
 const Tickets = () => {
@@ -21,7 +21,7 @@ const Tickets = () => {
     const date = new Date(ticket.created);
 
     return (
-        <>
+        <Fragment>
             <section className='section py-14'>
                 <div className='container mx-auto'>
                     <h1 className='text-5xl font-medium mb-4'>Ticket</h1>
@@ -37,10 +37,9 @@ const Tickets = () => {
                     <div className='mt-4 text-xl font-medium text-blue hover:text-primary'>
                         <Link to='/'>Back to home</Link>
                     </div>  
-                    
                 </div>
             </section>
-        </>
+        </Fragment>
     );
 }
 

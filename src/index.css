@@ -8,7 +8,7 @@
 }
 
 .btn {
-  @apply text-base font-medium rounded-lg p-3;
+  @apply text-base text-xl font-medium rounded-lg p-3;
 }
 
 

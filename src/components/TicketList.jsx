@@ -2,7 +2,7 @@ import TicketItem from '../components/TicketItem';
 
 const TicketList = ({tickets, updateTicket, deleteTicket}) => {
   return (
-    <div className='ticket__list grid grid-cols-3 md:grid grid-cols-2 gap-5'>
+    <div className='ticket__list grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5'>
         { tickets &&
           tickets.map((ticket, i) => (
               <TicketItem 

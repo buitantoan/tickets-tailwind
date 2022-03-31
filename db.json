@@ -3,14 +3,14 @@
     {
       "title": "Toan",
       "des": "Bui Tan Toan",
-      "status": "open",
+      "status": "completed",
       "created": "Tue Mar 29 2022",
       "id": 9
     },
     {
       "title": "Test update",
       "des": "Test Description update",
-      "status": "in-progress",
+      "status": "completed",
       "created": "Tue Mar 29 2022",
       "id": 10
     },
@@ -27,13 +27,6 @@
       "status": "open",
       "created": "Tue Mar 29 2022",
       "id": 12
-    },
-    {
-      "title": "aaaa",
-      "des": "aaaafdfdf",
-      "status": "open",
-      "created": "Tue Mar 29 2022",
-      "id": 13
     },
     {
       "title": "Reload",

@@ -1,4 +1,4 @@
-import { useState , useEffect } from 'react';
+import {Fragment , useState , useEffect } from 'react';
 import TicketList from '../components/TicketList';
 import AddTicket from '../components/AddTicket';
 import Button from '../components/Button';
@@ -26,6 +26,7 @@ const HomePage = () => {
     useEffect( async () => {
 
         const data = await fetchTickets();
+        
         const timer = setTimeout(() => {
             setTickets(data);
         }, 1000);
@@ -35,7 +36,7 @@ const HomePage = () => {
     }, []);
     
     const addTicket = async (ticket) => {
-        const form = document.querySelector('#formModal');
+      
         const res = await fetch('http://localhost:5000/tickets', {
             method: 'POST',
             headers: {
@@ -68,11 +69,6 @@ const HomePage = () => {
         const res = await fetch(`http://localhost:5000/tickets/${id}`, {
             method: 'DELETE',
         });
-
-        console.log(res.status);
-        if (res.status === 200 ) {
-            console.log(res);
-        }
         
         setTickets(tickets.filter( (ticket) => ticket.id !== id ));
     }
@@ -83,14 +79,22 @@ const HomePage = () => {
 
         var getTicketStatus = '';
         if(ticketData){
-            if(ticketData.status !== 'completed') 
+            if(ticketData.status !== 'completed'){
                 getTicketStatus = status;
-            else
-                if( status === 'in-progress' )
+            } 
+            else{
+                if( status === 'in-progress' ){
+                    alert(' Status "completed" does not change "in-progress" ');
                     return ticketData;
-                else 
+                }
+                else{
                     getTicketStatus = status;
+                }
+                    
+            }
+
         }
+
         const updTicket = { ...ticketData, title: title, des: des, status: getTicketStatus }
 
 
@@ -124,10 +128,10 @@ const HomePage = () => {
     }
 
     return (
-        <>
+        <Fragment>
             <section className='py-20'>
-                <div className='container mx-auto'>
-                    <h1 className='text-3xl font-semibold mb-5'>Tickets Tracker</h1>
+                <div className='container mx-auto px-4'>
+                    <h1 className='text-5xl font-semibold mb-5'>Tickets Tracker</h1>
                     <div className='tickets__container'>
                         <div className='tickets__header'>
                             <Button 
@@ -146,13 +150,13 @@ const HomePage = () => {
                                     deleteTicket={deleteTicket}>
                                 </TicketList>
                             ) : (
-                                <div className='error'>'No Tickets To Show'</div>
+                                <div className='error text-3xl font-medium'>'No Tickets To Show'</div>
                             )}
                         </div>
                     </div>
                 </div>
             </section>
-        </>
+        </Fragment>
         
     );
 }
