@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
       <div className='header py-6'>
-        <nav className='container mx-auto'>
+        <nav className='container mx-auto px-4'>
           <ul>
             <li>
               <Link 

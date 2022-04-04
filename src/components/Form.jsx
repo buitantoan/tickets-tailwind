@@ -31,7 +31,7 @@ function Form({onSubmit, onTitle, onDes, onStatus, title, des, status, textSubmi
         <div className='form-control text-left'>
             <label htmlFor="status">Status</label>
             <select 
-                className='appearance-none w-full mt-3 px-4 py-3 rounded-md bg-select'
+                className='appearance-none w-full mt-3 px-4 py-3 rounded-md bg-select select'
                 name="status" 
                 id="status"
                 value={status}
