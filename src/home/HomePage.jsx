@@ -3,6 +3,9 @@ import TicketList from '../components/TicketList';
 import AddTicket from '../components/AddTicket';
 import Button from '../components/Button';
 
+const colors = require('tailwindcss/colors');
+// console.log(colors);
+
 
 
 const HomePage = () => {
@@ -133,12 +136,12 @@ const HomePage = () => {
         <Fragment>
             <section className='py-20'>
                 <div className='container mx-auto px-4'>
-                    <h1 className='text-5xl font-semibold mb-5'>Tickets App With TailwindCss</h1>
+                    <h1 className='heading text-black dark:text-white font-semibold mb-[50px]'>Tickets App With TailwindCss</h1>
                     <div className='tickets__container'>
                         <div className='tickets__header'>
                             <Button 
                                 data-toggle="modal" data-target="#formModal"
-                                btnClass={`btn bg-black text-white hover:text-active ${!showAddTicketForm ? 'btn--primary' : 'btn--secondary'}`} 
+                                btnClass={`btn text-white hover:text-active ${!showAddTicketForm ? 'btn--primary' : 'btn--secondary'}`} 
                                 text='Add Ticket'
                                 onClick={() => setShowAddTicketForm(!showAddTicketForm)}>
                             </Button>

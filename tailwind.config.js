@@ -4,6 +4,7 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     screens: {
       sm: '480px',
@@ -21,12 +22,19 @@ module.exports = {
       white : colors.white,
       black: colors.black,
       gray : colors.gray,
-      
+      blue : colors.blue,
+      light: colors.light,
     },
-    extend: {},
+    
+    extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'] 
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
+  
   ],
 }

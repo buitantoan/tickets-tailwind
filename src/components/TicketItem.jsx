@@ -26,8 +26,8 @@ const TicketItem = ({ticket, updateTicket, deleteTicket }) => {
             </div>
             <div className='ticket__item-bottom pt-5'>
                 <div className='ticket__item-action flex space-x-3 '>
-                    <Button btnClass='text-md px-4 py-2 font-medium rounded-md bg-black text-white hover:text-active' text='Update' onClick={() => setShowUpdateTicketForm(!showUpdateTicketForm)} ></Button>
-                    <Button btnClass='text-md px-4 py-2 font-medium rounded-md bg-black text-white hover:text-active' text='Delete' onClick={() => deleteTicket(ticket.id)} ></Button>
+                    <Button btnClass='btn text-white hover:text-active' text='Update' onClick={() => setShowUpdateTicketForm(!showUpdateTicketForm)} ></Button>
+                    <Button btnClass='btn text-white hover:text-active' text='Delete' onClick={() => deleteTicket(ticket.id)} ></Button>
                 </div>
             </div>
             {showUpdateTicketForm && (
