@@ -43,7 +43,7 @@ const AddTicket = ({ showForm ,addTicket}) => {
         <div className="modal fade fixed top-0 left-0 bg-gray-600 bg-opacity-50 w-full h-full overflow-x-hidden overflow-y-auto"
             id="formModal">
             <div className="modal-dialog relative max-w-xl mx-auto">
-                <button onClick={showForm} className='absolute top-0 right-0 px-4 py-2 bg-black text-white'>Close</button>
+                <button onClick={showForm} className='absolute top-0 right-0 px-4 py-2 bg-black text-white hover:bg-blue-400'>Close</button>
                 <Form 
                     onSubmit={onSubmit}
                     onTitle={onTitle}

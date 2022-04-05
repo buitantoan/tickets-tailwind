@@ -45,7 +45,7 @@ function Form({onSubmit, onTitle, onDes, onStatus, title, des, status, textSubmi
         
         <div className='form-control'>
             <input 
-                className='btn mt-4 text-white hover:text-black bg-blue cursor-pointer' 
+                className='btn mt-4 text-white hover:text-blue-500 cursor-pointer' 
                 type='submit' 
                 value={textSubmit}
             />

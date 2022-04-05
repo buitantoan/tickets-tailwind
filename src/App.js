@@ -6,7 +6,7 @@ import Tickets from './tickets/Tickets';
 const App = () => {
   return (
     <Router>
-      <div className="App">
+      <div className="App bg-white dark:bg-blue-500">
         <Header></Header>
         <Routes>
           <Route path='/' element={<HomePage/>}></Route>
